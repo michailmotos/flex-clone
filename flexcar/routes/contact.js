@@ -14,8 +14,6 @@ router.post('/',async (req,res)=> {
         name: req.body.custName,
         email: req.body.custEmail,
     })
-    console.log('lol')
-    console.log(req.body.custName)
     try {
         ticket = await ticket.save()
         res.redirect(`/`)
