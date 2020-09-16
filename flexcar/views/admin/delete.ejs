@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <title>FlexCar</title>
+    <meta charset="UTF-8"> 
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Lato">
+    <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <h1> Car Management Panel</h1>
+
+        <% cars.forEach(cars => { %>
+            <div class="card mt-4">
+                <div class="card-body">
+                    <a href="cars/<%= cars.slug %>">
+                    <h3 class="card-title">
+                        <%= cars.manuf %>
+                    </h3>
+                    <h4 class="card-title">
+                        <%= cars.model %>
+                    </h4>
+                </a>
+                    <div class ="card-text mb-2">
+                        <%= cars.price %> €
+                    </div>
+                    <form action="/cars/<%= cars.id %>?_method=DELETE" method="POST">
+                        <button type="submit" class="btn btn-danger"> Delete</button> </form>
+                </div>
+            </div>
+        <% }) %> 
+    </div>
+        
+    
+</body>
+</html>

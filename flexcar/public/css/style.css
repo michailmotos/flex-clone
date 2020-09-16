@@ -1,0 +1,38 @@
+.navbar-default .navbar-brand {
+    color: red !important;
+}
+navbar-light {
+    color: red !important;
+    font-weight: bold !important;
+}
+body { 
+    padding-top: 150px; 
+    background-image:url("/img/bg.jpg");
+    background-size:cover;
+  }
+ul.nav li a, ul.nav li a:visited {
+    color: rgb(199, 31, 31) !important;
+    font-weight: bold !important;
+}
+
+ul.nav li a:hover, ul.nav li a:active {
+    color: rgb(199, 31, 31) !important;
+    font-weight: bold !important;
+}
+
+ul.nav li.active a {
+    color: rgb(199, 31, 31) !important;
+    font-weight: bold !important;
+}
+a {
+    color: rgb(199, 31, 31) !important;
+    font-weight: bold !important;
+}
+.card {
+    min-width: 13rem;
+    max-width: 13rem;
+}
+.card-show {
+    min-width: 20rem !important;
+    max-width: 200rem !important;
+}
