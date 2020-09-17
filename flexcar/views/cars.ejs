@@ -22,9 +22,23 @@
     </nav>
 </head>
 <body>
+    <div class="row">
+
+        <div class="col-md-offset-4 mx-auto">
+        <div class="btn-group button-group justify-content-center" role="group" aria-label="selectSize">
+            <a href="/cars" class="btn custom-button" role="button" >All</a>
+            <a href="/cars/city" class="btn custom-button" role="button" >City</a>
+            <a href="/cars/compact" class="btn custom-button" role="button" >Compact</a>
+            <a href="/cars/suvs" class="btn custom-button" role="button" >SUVs</a>
+            <a href="/cars/vans" class="btn custom-button" role="button" >VANs</a>
+          </div>
+        </div>
+    </div>
     <div class="row mx-auto">
         <div class="col-md-8 mx-auto">
+            
         <div class="card-deck justify-content-center">
+            
         <% cars.forEach(cars => { %>
             <div class="card mb-4">
                 <div class="card-body">
@@ -44,6 +58,7 @@
         <% }) %> 
     </div>
     </div>
+    
     </div>
 
     

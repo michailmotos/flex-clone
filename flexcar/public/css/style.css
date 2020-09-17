@@ -36,3 +36,11 @@ a {
     min-width: 20rem !important;
     max-width: 200rem !important;
 }
+.custom-button {
+    color: rgb(199, 31, 31) !important;
+    font-weight: bold !important;
+    background-color: white !important;
+}
+.button-group {
+    margin-bottom: 3rem;
+}

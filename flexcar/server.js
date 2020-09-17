@@ -11,9 +11,11 @@ const methodOverride = require('method-override')
 
 mongoose.connect('mongodb://localhost/flexcar', { useNewUrlParser: true, useUnifiedTopology: true})
 mongoose.set('useCreateIndex', true);
+
 app.set('view engine', 'ejs')
 app.use(express.urlencoded({ extended: false }))
 app.use(methodOverride('_method'))
+
 app.use(express.static('public'))
 app.use('/css', express.static(__dirname + 'public/css'))
 app.use('/img', express.static(__dirname + 'public/img'))
@@ -22,6 +24,26 @@ app.use('/js', express.static(__dirname + 'public/js'))
 app.get('/', async (req,res)=> {
     const cars = await car.find().sort({ createdAt: 'desc'})
     res.render('index', { cars: cars})
+})
+
+app.get('/cars/city', async (req,res)=> {
+    const cars = await car.find({size: "0"}).sort({ createdAt: 'desc'})
+    res.render('cars', { cars: cars})
+})
+
+app.get('/cars/compact', async (req,res)=> {
+    const cars = await car.find({size: "1"}).sort({ createdAt: 'desc'})
+    res.render('cars', { cars: cars})
+})
+
+app.get('/cars/suvs', async (req,res)=> {
+    const cars = await car.find({size: "2"}).sort({ createdAt: 'desc'})
+    res.render('cars', { cars: cars})
+})
+
+app.get('/cars/vans', async (req,res)=> {
+    const cars = await car.find({size: "3"}).sort({ createdAt: 'desc'})
+    res.render('cars', { cars: cars})
 })
 
 app.get('/cars', async (req,res)=> {
