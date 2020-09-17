@@ -51,12 +51,12 @@ app.get('/cars', async (req,res)=> {
 })
 
 app.get('/admin/delete', async (req,res)=> {
-    const cars = await car.find().sort({ createdAt: 'desc'})
+    const cars = await car.find()
     res.render('admin/delete', { cars: cars})
 })
 
 app.get('/admin/tickets', async (req,res)=> {
-    const tickets = await ticket.find().sort({ createdAt: 'desc'})
+    const tickets = await ticket.find()
     res.render('admin/tickets', { tickets: tickets})
 })
 
