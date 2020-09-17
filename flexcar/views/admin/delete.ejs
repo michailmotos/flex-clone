@@ -8,12 +8,51 @@
     <meta charset="UTF-8"> 
     <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Lato">
     <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
+    <link href="/css/style.css" rel="stylesheet" type="text/css">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="/">
+                Car Fleet Management Panel</a>
+            <ul class="nav sticky-top navbar-expand-lg navbar-light fixed-top"> 
+                <li class="mr-4"><a href="/cars"> Cars</a></li>
+                <li class="mr-4"><a href="/faq"> FAQ</a></li>
+                <li class="mr-4"><a href="/contact"> Contact us</a></li>
+            </ul>  
+        </div>
+    </nav>
+</head>
 </head>
 <body>
-    <div class="container">
-        <h1> Car Management Panel</h1>
+        <div class="row">
+            <div class="col-md-8 mx-auto">
+                
+            <div class="card-deck justify-content-center">
+                
+            <% cars.forEach(cars => { %>
+                <div class="card mb-4" style="margin: 'auto';">
+                    <div class="card-body">
+                        <a href="/cars/<%= cars.slug %>">
+                            <h4 class="card-title">
+                                <%= cars.manufacturer %>
+                                
+                            </h4>
+                            <h5 class="card-subtitle mb-2"><%= cars.model %></h5>
+                        </a>
+                        <div class ="card-text mb-2">
+                            <%= cars.price %> € / month
+                            <form action="/cars/<%= cars.id %>?_method=DELETE" method="POST">
+                                <button type="submit" class="btn btn-danger"> Delete</button> </form>
+                        </div>
+                    </div>
+                    
+                </div>
+            <% }) %> 
+        </div>
+        </div>
+        
+        </div>
 
-        <% cars.forEach(cars => { %>
+        <!--<% cars.forEach(cars => { %>
             <div class="card mt-4">
                 <div class="card-body">
                     <a href="cars/<%= cars.slug %>">
@@ -27,12 +66,10 @@
                     <div class ="card-text mb-2">
                         <%= cars.price %> €
                     </div>
-                    <form action="/cars/<%= cars.id %>?_method=DELETE" method="POST">
-                        <button type="submit" class="btn btn-danger"> Delete</button> </form>
-                </div>
+                    
             </div>
         <% }) %> 
-    </div>
+    </div> -->
         
     
 </body>

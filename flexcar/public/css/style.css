@@ -44,3 +44,7 @@ a {
 .button-group {
     margin-bottom: 3rem;
 }
+.btn-new {
+    color: white !important;
+    font-weight: normal !important;
+}

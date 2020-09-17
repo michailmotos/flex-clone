@@ -1,5 +1,5 @@
 # flex-clone
-A node.js implementation of flexcar, using Express, MongoDB and ejs.
+A node.js implementation of flexcar, using Express, Node.js and MongoDB.
 
 ## Installation
 

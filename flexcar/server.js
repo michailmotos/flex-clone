@@ -22,8 +22,7 @@ app.use('/img', express.static(__dirname + 'public/img'))
 app.use('/js', express.static(__dirname + 'public/js'))
 
 app.get('/', async (req,res)=> {
-    const cars = await car.find().sort({ createdAt: 'desc'})
-    res.render('index', { cars: cars})
+    res.render('index')
 })
 
 app.get('/cars/city', async (req,res)=> {
