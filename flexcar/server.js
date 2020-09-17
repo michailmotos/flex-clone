@@ -9,7 +9,8 @@ const ticket = require('./models/tickets')
 const mongoose = require('mongoose')
 const methodOverride = require('method-override')
 
-mongoose.connect('mongodb://localhost/flexcar', { useNewUrlParser: true, useUnifiedTopology: true, createIndexes: true })
+mongoose.connect('mongodb://localhost/flexcar', { useNewUrlParser: true, useUnifiedTopology: true})
+mongoose.set('useCreateIndex', true);
 app.set('view engine', 'ejs')
 app.use(express.urlencoded({ extended: false }))
 app.use(methodOverride('_method'))
