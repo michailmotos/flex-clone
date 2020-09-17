@@ -27,27 +27,27 @@ app.get('/', async (req,res)=> {
 })
 
 app.get('/cars/city', async (req,res)=> {
-    const cars = await car.find({size: "0"}).sort({ createdAt: 'desc'})
+    const cars = await car.find({size: "0"}).sort({ price: 'asc'})
     res.render('cars', { cars: cars})
 })
 
 app.get('/cars/compact', async (req,res)=> {
-    const cars = await car.find({size: "1"}).sort({ createdAt: 'desc'})
+    const cars = await car.find({size: "1"}).sort({ price: 'asc'})
     res.render('cars', { cars: cars})
 })
 
 app.get('/cars/suvs', async (req,res)=> {
-    const cars = await car.find({size: "2"}).sort({ createdAt: 'desc'})
+    const cars = await car.find({size: "2"}).sort({ price: 'asc'})
     res.render('cars', { cars: cars})
 })
 
 app.get('/cars/vans', async (req,res)=> {
-    const cars = await car.find({size: "3"}).sort({ createdAt: 'desc'})
+    const cars = await car.find({size: "3"}).sort({ price: 'asc'})
     res.render('cars', { cars: cars})
 })
 
 app.get('/cars', async (req,res)=> {
-    const cars = await car.find().sort({ createdAt: 'desc'})
+    const cars = await car.find().sort({ price: 'asc'})
     res.render('cars', { cars: cars})
 })
 
